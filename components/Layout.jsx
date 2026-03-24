@@ -1,6 +1,6 @@
 import React from "react";
 import { NavLink, Link } from "react-router-dom";
-import { Navbar, NavbarBrand, NavbarContent, Input, Dropdown, DropdownTrigger, DropdownMenu, DropdownItem, Avatar, Badge, Button, Switch, Card, CardBody } from "@heroui/react";
+import { Navbar, NavbarBrand, NavbarContent, Input, Dropdown, DropdownTrigger, DropdownMenu, DropdownItem, Avatar, Badge, Button, Switch, Card } from "@heroui/react";
 import {
   HomeIcon,
   PlusIcon,
@@ -139,11 +139,11 @@ export default function Layout({ children }) {
         </nav>
         <div className="px-4 py-4">
           <Card className="bg-[var(--color-background)]/60 border border-[var(--color-border)] rounded-2xl">
-            <CardBody className="p-4">
+            <Card.Content className="p-4">
               <p className="text-[var(--color-text)] text-xs leading-5">
                 Tip: Use the Add Expense page to quickly log purchases. Keep categories consistent for better reports.
               </p>
-            </CardBody>
+            </Card.Content>
           </Card>
         </div>
       </aside>

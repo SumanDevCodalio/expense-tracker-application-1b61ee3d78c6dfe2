@@ -1,0 +1,82 @@
+@import "tailwindcss";
+/* Design tokens mapped to CSS variables for global theming */
+:root {
+  /* Brand colors (dark mode default) */
+  --color-primary: #1F3A8A; /* indigo 800 */
+  --color-primary-light: #3B82F6; /* blue 500 */
+  --color-secondary: #0F766E; /* teal 700 */
+  --color-secondary-light: #14B8A6; /* teal 500 */
+  --color-accent: #6D28D9; /* purple 700 */
+  --color-accent-light: #A78BFA; /* purple 300-400 */
+
+  /* Neutrals */
+  --color-background: #0B1220; /* deep navy */
+  --color-surface: #111827; /* slate 900 */
+  --color-text: #F8FAFC; /* very light for dark bg */
+  --color-border: #1F2937; /* slate 800 */
+  --color-ring: #374151; /* slate 700 */
+
+  /* Shadows */
+  --shadow-color: 31, 58, 138; /* rgb of primary */
+
+  /* Gradients (generate from assigned brand colors) */
+  --gradient-primary-accent: linear-gradient(135deg, var(--color-primary) 0%, var(--color-accent) 100%);
+  --gradient-primary-secondary: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+}
+
+/* Light theme overrides */
+:root[data-theme='light'] {
+  --color-background: #F8FAFC; /* light of background */
+  --color-surface: #F3F4F6; /* light of surface */
+  --color-text: #111827; /* dark text for readability */
+  --color-border: #E5E7EB; /* light border */
+  --color-ring: #D1D5DB; /* light ring */
+}
+
+/* Global element resets and base styles */
+html,
+body,
+#root {
+  height: 100%;
+}
+body {
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+  background: var(--color-background);
+  color: var(--color-text);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Global scrollbar styles */
+::-webkit-scrollbar {
+  width: 8px;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-surface);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-primary);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-primary-light);
+  border-radius: 4px;
+}
+
+/* Utility helpers that may be reused */
+.shadow-primary {
+  box-shadow: 0 10px 20px rgba(var(--shadow-color), 0.25);
+}
+
+.glass-surface {
+  background: color-mix(in oklab, var(--color-surface) 92%, transparent);
+  backdrop-filter: blur(10px);
+}
+
+/***** Component tokens *****/
+/**** Inputs ****/
+.input-focus-primary:focus-within {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--color-primary);
+}

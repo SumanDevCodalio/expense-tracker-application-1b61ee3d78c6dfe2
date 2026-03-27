@@ -5,10 +5,7 @@ on:
   # Runs on pushes targeting the default branch
   push:
     branches: ["main"]
-    
-env:
-  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
-  
+
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
@@ -23,7 +20,7 @@ permissions:
 concurrency:
   group: "pages"
   cancel-in-progress: false
-   
+
 jobs:
   # Single deploy job since we're just deploying
   deploy:

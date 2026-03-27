@@ -2,22 +2,22 @@
 /* Design tokens mapped to CSS variables for global theming */
 :root {
   /* Brand colors (dark mode default) */
-  --color-primary: #1F3A8A; /* indigo 800 */
-  --color-primary-light: #3B82F6; /* blue 500 */
-  --color-secondary: #0F766E; /* teal 700 */
-  --color-secondary-light: #14B8A6; /* teal 500 */
-  --color-accent: #6D28D9; /* purple 700 */
-  --color-accent-light: #A78BFA; /* purple 300-400 */
+  --color-primary: #2563EB; /* vibrant blue for CTAs */
+  --color-primary-light: #60A5FA;
+  --color-secondary: #0D9488; /* teal complementary */
+  --color-secondary-light: #2DD4BF;
+  --color-accent: #D97706; /* amber for highlights */
+  --color-accent-light: #F59E0B;
 
   /* Neutrals */
-  --color-background: #0B1220; /* deep navy */
-  --color-surface: #111827; /* slate 900 */
-  --color-text: #F8FAFC; /* very light for dark bg */
-  --color-border: #1F2937; /* slate 800 */
-  --color-ring: #374151; /* slate 700 */
+  --color-background: #0B1220; /* deep navy background */
+  --color-surface: #111827; /* elevated surfaces/cards */
+  --color-text: #F8FAFC; /* high-contrast text */
+  --color-border: #334155; /* subtle borders/dividers */
+  --color-ring: #334155; /* focus rings */
 
   /* Shadows */
-  --shadow-color: 31, 58, 138; /* rgb of primary */
+  --shadow-color: 37, 99, 235; /* RGB of primary (#2563EB) */
 
   /* Gradients (generate from assigned brand colors) */
   --gradient-primary-accent: linear-gradient(135deg, var(--color-primary) 0%, var(--color-accent) 100%);
@@ -26,11 +26,11 @@
 
 /* Light theme overrides */
 :root[data-theme='light'] {
-  --color-background: #F8FAFC; /* light of background */
-  --color-surface: #F3F4F6; /* light of surface */
-  --color-text: #111827; /* dark text for readability */
-  --color-border: #E5E7EB; /* light border */
-  --color-ring: #D1D5DB; /* light ring */
+  --color-background: #F8FAFC; /* background light */
+  --color-surface: #FFFFFF; /* card surface light */
+  --color-text: #111827; /* readable dark text */
+  --color-border: #E2E8F0; /* subtle light borders */
+  --color-ring: #374151; /* accessible focus ring */
 }
 
 /* Global element resets and base styles */
